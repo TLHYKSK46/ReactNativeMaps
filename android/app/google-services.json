@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "110744669316",
+    "project_id": "reactnativemaps-6dc3d",
+    "storage_bucket": "reactnativemaps-6dc3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110744669316:android:4e32f59570ada7bd7346d1",
+        "android_client_info": {
+          "package_name": "com.reactnativemaps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110744669316-0k6b6ocvdrae2rdnhf7objl9dvsl5n4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXIf3Org6of1z1o_t61oDfb_mfCvVvEeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110744669316-0k6b6ocvdrae2rdnhf7objl9dvsl5n4i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "110744669316-qu6m1j9q0jk3tt6dhd45bs5lahu2gdpp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "reactnativemaps"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

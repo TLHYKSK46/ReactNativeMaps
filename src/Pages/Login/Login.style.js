@@ -1,27 +1,35 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
-container:{
-   // flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center", 
-},
-button:{
+  container: {
+     flex: 1,
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+  },
+  buttonContainer:{
+    width:"100%",
+    flexDirection:'row',
+  },
+  buttonText:{
+    color: "#ffffff",
+  },
+  button: {
     //width:"80%",
-    backgroundColor:"#fb5b5a",
-    borderRadius:25,
-    height:50,
+    backgroundColor: '#fb5b5a',
+    borderRadius: 25,
+    height: 50,
+    margin: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#000',
+    width:"45%",
 
-    marginTop:40,
-    marginBottom:10
- 
-},
+  },
 
-input:{
-    borderWidth:1,
-    margin:10,
-    borderColor:'#000',
-    padding:10,
-    borderRadius:10,
-} 
-})
+  input: {
+    borderWidth: 1,
+    margin: 10,
+    borderColor: '#000',
+    padding: 10,
+    borderRadius: 50,
+  },
+});
