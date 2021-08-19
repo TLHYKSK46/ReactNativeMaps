@@ -8,26 +8,22 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import styles from './Login.style';
-import Maps from '../Home/Maps/Maps';
-import PinList from '../Home/PinList/PinList.js';
 import auth from '@react-native-firebase/auth';
 import {CommonActions} from '@react-navigation/native';
 
 export default function Login(props) {
-  const [email, onChangeEmail] = React.useState('');
+  const [email, onChangeEmail] = React.useState(null);
   const [password, onChangePassword] = React.useState(null);
 
   function onRegister() {
     props.navigation.navigate('Register');
   }
-  function onHome() {
-    navigation.navigate('Home');
-  }
   const login = () => {
     auth()
+   // .signInWithEmailAndPassword("test@test.com", "test**")
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        alert('User account  & signed in!');
+        console.log('User account  & signed in!');
         props.navigation.dispatch(
           CommonActions.reset({
             index: 0,
@@ -60,7 +56,7 @@ export default function Login(props) {
           style={styles.input}
           onChangeText={onChangeEmail}
           value={email}
-          placeholder="Username"
+          placeholder="Email"
         />
         <TextInput
           style={styles.input}
@@ -69,7 +65,7 @@ export default function Login(props) {
           placeholder="Password"
         />
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={Login}>
+          <TouchableOpacity style={styles.button} onPress={login}>
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={onRegister}>

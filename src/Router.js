@@ -15,7 +15,7 @@ import PinList from './Pages/Home/PinList/PinList';
 import Profile from "./Pages/Home/Profile/Profile"
 
 const Stack = createNativeStackNavigator();
-
+const Tab = createBottomTabNavigator();
 function  App() {
 
   return (
@@ -29,7 +29,7 @@ function  App() {
   );    
 }
 export default App;
-const Tab = createBottomTabNavigator();
+
 
 export const Home = () => {
   return (

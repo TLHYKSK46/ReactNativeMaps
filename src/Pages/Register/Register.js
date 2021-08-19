@@ -32,7 +32,7 @@ export default function Register(props) {
         style={styles.input}
         onChangeText={onChangeEmail}
         value={email}
-        placeholder="Username"
+        placeholder="Email"
       />
       <TextInput
         style={styles.input}
