@@ -20,8 +20,8 @@ export default function Login(props) {
   }
   const login = () => {
     auth()
-   // .signInWithEmailAndPassword("test@test.com", "test**")
-      .signInWithEmailAndPassword(email, password)
+    .signInWithEmailAndPassword("test@test.com", "test**")
+   //   .signInWithEmailAndPassword(email, password)
       .then(() => {
         console.log('User account  & signed in!');
         props.navigation.dispatch(

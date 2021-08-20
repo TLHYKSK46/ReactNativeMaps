@@ -7,5 +7,11 @@ export default StyleSheet.create({
   },
   map:{
       flex: 1,
+  },
+  alert:{
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   }
 })

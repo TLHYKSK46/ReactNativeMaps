@@ -1197,15 +1197,20 @@
   resolved "https://registry.npmjs.org/@react-native-community/eslint-plugin/-/eslint-plugin-1.1.0.tgz"
   integrity sha512-W/J0fNYVO01tioHjvYWQ9m6RgndVtbElzYozBq1ZPrHO/iCzlqoySHl4gO/fpCl9QEFjvJfjPgtPMTMlsoq5DQ==
 
+"@react-native-community/geolocation@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/geolocation/-/geolocation-1.4.2.tgz#7228c6d37c2f55017af9c49c2b9ad586d9bcb9f8"
+  integrity sha512-9x9dHDeUXnh2larA4zTT3y/tXPmRnysh5o9fsNbGcnUKPj1BUCIHnGGPxEIDnwP1DNIMP2DN9DmuMHImtTbX6A==
+
 "@react-native-community/geolocation@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/geolocation/-/geolocation-2.0.2.tgz#ba8b40f560ead8d014740d1cdea970b33f19312e"
   integrity sha512-tTNXRCgnhJBu79mulQwzabXRpDqfh/uaDqfHVpvF0nX4NTpolpy6mvTRiFg7eWFPGRArsnZz1EYp6rHfJWGgEA==
 
-"@react-native-firebase/app@^12.6.1":
-  version "12.6.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.6.1.tgz#d416c8afdc9e11ffcd9f2d0b083c164ef064cb98"
-  integrity sha512-0A+E+vg6pV+xFeLU5t92fNSGpU3jOevxjn51s7/iohT3GaeoCtwN+ZuiTvhMAHmsfva4tCDiHEpYmO2IHPF3bw==
+"@react-native-firebase/app@^12.7.1":
+  version "12.7.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.7.1.tgz#8b6da14a1fc9344f788bd88efa1eef7de8e02f08"
+  integrity sha512-jkVoNZbvCz1QtS8ip12Sat/MNWTj2DiPg4dBKm+bLiJHdnw3p66ksl8eNM5PVLV8HlQGbx1w/j6qQsZKS8YoNQ==
   dependencies:
     "@expo/config-plugins" "^3.0.7"
     opencollective-postinstall "^2.0.1"
@@ -1215,6 +1220,16 @@
   version "12.6.1"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-12.6.1.tgz#9878c9c956c689f2287dcaf69e56334715392d87"
   integrity sha512-ybZjx/VIcUGi1ouLUzEzi/vXWNR23rt0qeTrivstlNW9rtGU4tpF6gLcedrDysyrK7Ye4DsKeWkKl/X8jBHo4Q==
+
+"@react-native-firebase/database@^12.7.1":
+  version "12.7.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/database/-/database-12.7.1.tgz#9021933f2fb6760a3bd9153a791f2f7d46c200ca"
+  integrity sha512-UM3/qq/gt1GBw7bUggTUJ5MUYsBM1GyriudIcIKM18uIWA8YIvQ+DZK68Rlr0xxT0WowhQYZYh3eNTRCOfLrfA==
+
+"@react-native-firebase/messaging@^12.7.1":
+  version "12.7.1"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/messaging/-/messaging-12.7.1.tgz#42e84b96e60ec11ceb6bd6b0c9d695ddd69b7966"
+  integrity sha512-K1iYNkdubL5JOt8fYs4xwlWs+bMA0XDJq7nbLUz3DgGhJH2VSZh0whBdeFV0yz2f+0TlOxb7TQpR6lVRftKkSw==
 
 "@react-navigation/bottom-tabs@^6.0.5":
   version "6.0.5"
@@ -5937,6 +5952,18 @@ react-is@^16.12.0, react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1, react-
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-dialog@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-dialog/-/react-native-dialog-8.2.0.tgz#e7ad6fffd2007b19766961692d553efff377c80b"
+  integrity sha512-Unfx9curgyCfC6iHJwKVYgztKtE51A6x2pqI4RRt9SXqcurgCb6U6qe93cOY1Y2S7iRxNpgJkF3AS0QahKbPGQ==
+
+react-native-geolocation-service@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-geolocation-service/-/react-native-geolocation-service-3.1.0.tgz#62e112374f1cd284ea00ced0ef6826af820f50e2"
+  integrity sha512-h0RwffuTt8ElpWQBJofao5+n1DT+GJfzSx5Pw+VYgQO+PmyYwhSthMSz+6F+9ZbgVHANm6w6HmTPRFYEsbjkYA==
+  dependencies:
+    "@react-native-community/geolocation" "^1.4.2"
+
 react-native-gesture-handler@^1.10.3:
   version "1.10.3"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz#942bbf2963bbf49fa79593600ee9d7b5dab3cfc0"
@@ -5947,6 +5974,11 @@ react-native-gesture-handler@^1.10.3:
     hoist-non-react-statics "^3.3.0"
     invariant "^2.2.4"
     prop-types "^15.7.2"
+
+react-native-input-prompt@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-input-prompt/-/react-native-input-prompt-1.0.0.tgz#06e858436156f206065f33ef3b2d971fd312db0f"
+  integrity sha512-xDXMD80KiJWb3sWQZpcsRfE5ZFTDXhwZPUmBPQNSvYI5l+0M4l5usHMcNNWubKZCL4Vg152cnEMtLLpjqRxAYg==
 
 react-native-maps@^0.28.0:
   version "0.28.0"

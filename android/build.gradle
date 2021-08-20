@@ -7,8 +7,9 @@ buildscript {
         compileSdkVersion = 29
         targetSdkVersion = 29
         ndkVersion = "20.1.5948944"
-        playServicesVersion = "17.0.0" // or find latest version
+       // playServicesVersion = "17.0.0" // or find latest version
         androidMapsUtilsVersion = "2.2.5"
+          googlePlayServicesVersion      = "17.0.0"
     }
     repositories {
         google()
@@ -21,7 +22,25 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+project.ext {
+  set('react-native', [
+    versions: [
+      // Overriding Build/Android SDK Versions
+      android : [
+        minSdk    : 21,
+        targetSdk : 29,
+        compileSdk: 29,
+        buildTools: "29.0.3"
+      ],
 
+      // Overriding Library SDK Versions
+      firebase: [
+        // Override Firebase SDK Version
+        bom           : "28.3.1"
+      ],
+    ],
+  ])
+}
 allprojects {
     repositories {
         mavenLocal()
