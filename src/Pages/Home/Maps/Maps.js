@@ -6,7 +6,7 @@ import database from '@react-native-firebase/database';
 import MapView, {PROVIDER_GOOGLE, Marker, LatLng} from 'react-native-maps';
 import styles from './Maps.style';
 import Dialog from 'react-native-dialog';
-
+import auth from '@react-native-firebase/auth';
 export default function Maps(props) {
   const [coord, setCoord] = useState();
   const [visible, setVisible] = useState(false);
@@ -38,15 +38,19 @@ export default function Maps(props) {
   function addMarker() {
     // const {latitude, longitude} = event.nativeEvent.coordinate;
     // console.log(latitude);
+    if(title!="")
+    {
     const location = {
-      email: 'test@example.com',
+      email: auth().currentUser.email,
       title: title,
       latitude: coord.latitude,
       longitude: coord.longitude,
     };
-    console.log(location);
     database().ref('Markers/').push(location);
     setVisible(false);
+  }else{
+    alert("Please! enter title");
+  }
   }
 
   return (
@@ -57,8 +61,9 @@ export default function Maps(props) {
           <Dialog.Input label="Pin Name"  onChangeText={t => setTitle(t)}>
             {title}
           </Dialog.Input>
-          <Dialog.Button label="Cancel" onPress={handleCancel} />
           <Dialog.Button label="Ok" onPress={addMarker} />
+          <Dialog.Button label="Cancel" onPress={handleCancel} />
+ 
         </Dialog.Container>
       </View>
       <MapView

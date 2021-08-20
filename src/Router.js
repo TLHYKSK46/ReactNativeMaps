@@ -35,9 +35,9 @@ export const Home = () => {
   return (
 
       <Tab.Navigator>
-        <Tab.Screen name="Maps" component={Maps} />
-        <Tab.Screen name="PinList" component={PinList} />
-        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Maps" component={Maps} options={{tabBarActiveTintColor:"#fb5b5a"}} />
+        <Tab.Screen name="PinList" component={PinList} options={{title: "Locations",tabBarActiveTintColor:"#fb5b5a"}} />
+        <Tab.Screen name="Profile" component={Profile}  options={{tabBarActiveTintColor:"#fb5b5a"}}/>
       </Tab.Navigator>
    
   );

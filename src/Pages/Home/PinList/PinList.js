@@ -3,6 +3,8 @@ import {SafeAreaView, Text, Button, View, StyleSheet,FlatList} from 'react-nativ
 import database from '@react-native-firebase/database';
 import parseData from '../../../Utilities/parseData';
 import ListItem from '../../../components/ListItem';
+import auth from '@react-native-firebase/auth';
+import styles from './PinList.style'
 
 export default function PinList() {
   const [contentList, setContentList]=React.useState([]);
@@ -13,17 +15,12 @@ export default function PinList() {
       .ref('Markers/')
       .on('value', snapshot => {
         const contentData = snapshot.val();
-        parseData(contentData);
-        setContentList(parseData);
+       const parsedData= parseData(contentData);
+        setContentList(parsedData);
+        console.log(parsedData)
       });
   },[]);
-  const renderContent=({item})=>{
-    <View>
-         <Text>{item.title}</Text>
-         <Text>{item.latitude}</Text>
-         <Text>{item.longitude}</Text>
-        </View>
-  }//<ListItem  item={item} />
+  const renderContent=({item})=><ListItem  marker={item} />
   return(
     <SafeAreaView style={styles.container}>
         <FlatList
@@ -33,11 +30,4 @@ export default function PinList() {
     </SafeAreaView>
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
