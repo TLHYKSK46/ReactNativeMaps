@@ -20,7 +20,7 @@ export default function Login(props) {
   }
   const login = () => {
     auth()
-    .signInWithEmailAndPassword("test@test.com", "test**")
+    .signInWithEmailAndPassword("a@a.com", "123456")
    //   .signInWithEmailAndPassword(email, password)
       .then(() => {
         console.log('User account  & signed in!');
@@ -62,6 +62,7 @@ export default function Login(props) {
           style={styles.input}
           onChangeText={onChangePassword}
           value={password}
+          secureTextEntry={true}
           placeholder="Password"
         />
         <View style={styles.buttonContainer}>

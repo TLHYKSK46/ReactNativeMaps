@@ -13,7 +13,7 @@ import Register from './Pages/Register/Register';
 import Maps from './Pages/Home/Maps/Maps';
 import PinList from './Pages/Home/PinList/PinList';
 import Profile from "./Pages/Home/Profile/Profile"
-
+import ListItem from "./components/ListItem"
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 function  App() {
@@ -24,6 +24,8 @@ function  App() {
           <Stack.Screen name="Login" component={Login} options={{title: "Login"}}/>
           <Stack.Screen name="Register" component={Register} options={{title: "Register"}} />
           <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+          <Stack.Screen name="ListItem" component={ListItem} options={{ headerShown: false }} />
+
         </Stack.Navigator>
       </NavigationContainer>
   );    

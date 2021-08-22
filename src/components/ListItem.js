@@ -1,15 +1,18 @@
 import React from 'react';
-import {SafeAreaView, Text, Image, View, StyleSheet} from 'react-native';
-
-export default function ListItem({marker}) {
+import {SafeAreaView, Text, Image, View, StyleSheet,TouchableOpacity} from 'react-native';
+import Maps from '../Pages/Home/Maps/Maps'
+export default function ListItem(props) {
+ 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{marker.title}</Text>
+    
+      <Text style={styles.title}>{props.marker.title}</Text>
       {/* <Text>{marker.id}</Text> */}
       <View style={styles.location}>
-        <Text style={styles.text}>latitude:{marker.latitude}</Text>
-        <Text style={styles.text}>longitude:{marker.longitude}</Text>
+        <Text style={styles.text}>latitude:{props.marker.latitude}</Text>
+        <Text style={styles.text}>longitude:{props.marker.longitude}</Text>
       </View>
+     
     </View>
   );
 }
@@ -17,7 +20,7 @@ const styles = StyleSheet.create({
   container: {
     //flex: 1,
     backgroundColor: '#fb5b5a',
-    margin: 5,
+    margin: 2,
     padding: 5,
     borderRadius: 10,
     justifyContent: 'center',
