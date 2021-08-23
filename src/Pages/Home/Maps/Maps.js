@@ -13,34 +13,15 @@ export default function Maps(props) {
   const [coord, setCoord] = useState();
   const [visible, setVisible] = useState(false);
   const [title, setTitle] = useState('');
-  const [data, setData] = useState();
   const [pinnedLocations, setPinnedLocations] = useState([]);
   const [newMarkerCoordinates, setNewMarkerCoordinates] = useState();
-  let markers1 = [];
-  // const {latitude="",longitude="",latitudeDelta="",longitudeDelta=""}=props.route.params;
-  // const myLocation ={
-  //   latitude: latitude,
-  //   longitude:longitude,
-  //   latitudeDelta: latitudeDelta,
-  //   longitudeDelta: longitudeDelta,
-  // };
-  // setCoord2(props.route.params.latitude)
+  // const {latitude,longitude,latitudeDelta,longitudeDelta}=props.route.params;
   const initialRegion = {
-    latitude: props.route.params.latitude ?? 39.92159743251795,
-    longitude: props.route.params.longitude ?? 32.85485230386257,
+    latitude:  props?.route?.params?.latitude ?? 39.92159743251795,
+    longitude:  props?.route?.params?.longitude ?? 32.85485230386257,
     latitudeDelta: 0.01,
     longitudeDelta: 0.01,
   };
-  const map1 = new Map();
-
-  // Geolocation.watchPosition(
-  //   position => {
-  //     setCoord(position.coords);
-  //   },
-  //   error => {
-  //     console.log(error);
-  //   },
-  // );
   // Geolocation.getCurrentPosition(
   //   c =>
   //     setCoord({
@@ -76,16 +57,15 @@ export default function Maps(props) {
       };
       database().ref('Markers/').push(location);
       setVisible(false);
+
+      //rest operator
+      setPinnedLocations([...pinnedLocations, newMarkerCoordinates]);
     } else {
       alert('Please! enter title');
     }
   }
-
-  // React.useEffect(() => {
-  //   console.log(coord);
-  // }, [coord]);
-
   React.useEffect(() => {
+    console.log('LAT FROM PROPS: ' + props?.route?.params?.latitude);
     database()
       .ref('/Markers')
       .once('value')
@@ -103,51 +83,7 @@ export default function Maps(props) {
       console.log(locations);
       setPinnedLocations(locations);
       });
-    // database()
-    //   .ref('Markers/')
-    //   .on('value', snapshot => {
-    //     const contentData = snapshot.val();
-    //     const parsedData = parseData(contentData);
-    //     //setPinnedLocations(contentData);
-    //     //setData(parsedData);
-    //     // parsedData.map(item => {
-    //     //   console.log(item);
-    //     //   setData({
-    //     //     id: item.id,
-    //     //     latitude: item.latitude,
-    //     //     longitude: item.longitude,
-    //     //   });
-    //     // });
-    //     console.log(parsedData);
-    //     console.log('MARKERS FROMAPI :');
-    //     console.log(pinnedLocations);
-    //     //console.log(data)
-    //   });
-
-    // setPinnedLocations([
-    //   {id: 2, latitude: 50, longitude: 50},
-    //   {id: 3, latitude: 40, longitude: 40},
-    // ]);
   }, []);
-  const renderUseMarker = () => {
-    // const konum=  data.map((item)=>{ return{latitude:item.latitude,longitude: item.longitude}})
-    //return (<Marker  coordinate={konum} />)
-    // return data.map((item)=>{
-    //   //console.log(item.latitude)
-    //   return (<Marker key={item.id} coordinate={item} />)
-    // })
-    console.log(data);
-    return markers.map(({id, latitude, longitude}) => {
-      // const lot=map1.set(latitude,longitude)
-      return (
-        <Marker
-          key={id}
-          coordinate={{latitude: latitude, longitude: longitude}}
-        />
-      );
-    });
-  };
-
   return (
     <SafeAreaView style={styles.container}>
       <View>
@@ -176,10 +112,6 @@ export default function Maps(props) {
               }}
             />
           ))}
-
-        {/* {markers && renderUseMarker()} */}
-
-        {/* <Marker coordinate={data} /> */}
       </MapView>
     </SafeAreaView>
   );

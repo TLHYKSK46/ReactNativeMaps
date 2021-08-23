@@ -11,8 +11,10 @@ fontSize:32,
 
   },
   image: {
-      width:256,
-      height:256,
+      width:128,
+      height:128,
+    alignItems: 'center',
+
   },
   email: {
       fontSize:28,
